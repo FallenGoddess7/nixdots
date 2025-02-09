@@ -10,7 +10,7 @@
 
   outputs = { ... }@inputs:{
     nixosConfigurations = {
-      okabe = mkSystem ./hosts/okabe/configuration.nix;
+      okabe = mkSystem ./hosts/okabe/configuration.nix; # Desktop #
 
       # TODO: implement an iso for installaion of nixos.
       # liveiso = mkSystem ./hosts/liveiso/configuration.nix;
