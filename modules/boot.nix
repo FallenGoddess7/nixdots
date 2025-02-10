@@ -15,7 +15,7 @@
 
   config = lib.mkIf config.myBoot.enable {
     silentBoot = [
-      
+
     ];
   };
 }
