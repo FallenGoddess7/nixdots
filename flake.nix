@@ -25,7 +25,7 @@
     };
     # ================ Home-manager Configurations =============== #
     homeConfigurations = {
-
+      # TODO: add home-manager configurations.
     };
 
     nixosModules.default = ./modules/default.nix;
