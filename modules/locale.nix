@@ -34,6 +34,6 @@
   };
 
   environment.variables = lib.mkDefault {
-    TZ = "${config.time.timeZone}"
+    TZ = "${config.time.timeZone}";
   };
 }
