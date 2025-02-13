@@ -2,7 +2,7 @@
 {
   imports = [
     ./boot.nix
-    # ./locale.nix
+    ./locale.nix
     # ./users.nix
   ];
 
