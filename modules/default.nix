@@ -2,9 +2,9 @@
 {
   imports = [
     ./boot.nix
-    ./locale.nix
-    ./users.nix
+    # ./locale.nix
+    # ./users.nix
   ];
 
-  myBoot.enable = lib.mkDefault true;
+  # myBoot.enable = lib.mkDefault true;
 }
