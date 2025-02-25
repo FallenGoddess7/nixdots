@@ -11,7 +11,7 @@
 {
   options = {
     wallpaper = lib.mkOption {
-      default = ./reimu.png;
+      default = ../wallpapers/reimu.png;
       type = lib.types.path;
       description = ''
         Path to your wallpaper.

@@ -4,6 +4,6 @@
     ./stylix.nix
   ];
 
-  wallpaper = lib.mkDefault ../../wallpapers/reimu.png;
+  wallpaper = lib.mkDefault ../wallpapers/reimu.png;
   theme = lib.mkDefault ./themes/everforest-dark-hard.yaml
 }
