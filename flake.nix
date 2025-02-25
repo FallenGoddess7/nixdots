@@ -51,7 +51,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     
     stylix.url = "github:danth/stylix";
-    sytlix.inputs.nixpkgs.follows = "nixpkgs";
+    stylix.inputs.nixpkgs.follows = "nixpkgs";
     
     # TODO: Add disko, impermanance, sops-nix, and NVF(or NixVim)
   };
