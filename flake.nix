@@ -46,9 +46,13 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    
     home-manager.url = "github:nix-community/home-manager";
-    # Prevents desyncronizing with nixpkgs
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    # TODO: Add disko, impermanance, stylix, sops-nix, and NVF(or NixVim)
+    
+    stylix.url = "github:danth/stylix";
+    sytlix.inputs.nixpkgs.follows = "nixpkgs";
+    
+    # TODO: Add disko, impermanance, sops-nix, and NVF(or NixVim)
   };
 }
