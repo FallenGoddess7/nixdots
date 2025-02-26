@@ -10,7 +10,7 @@
 {
   description = "My (Alice) configuration of NixOS via Flakes";
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }: 
+  outputs = inputs@{ self, nixpkgs, home-manager, stylix, ... }: 
   let
     # ================================ System ================================ #
     systemSettings = {

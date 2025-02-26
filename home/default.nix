@@ -8,7 +8,7 @@
     # ./apps/default.nix
     ./shell/default.nix
     ./style/default.nix
-    ./wayland/default.nix
+    # ./wayland/default.nix
   ];
 
 
