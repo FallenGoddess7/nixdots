@@ -49,6 +49,8 @@
 
       image = "${config.wallpaper}";
       imageScalingMode = "fill";
+
+      targets.vscode.enable = false;
     };
   };
 }

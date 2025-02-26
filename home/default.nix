@@ -17,7 +17,6 @@
 
 
 
-
   # What version to lock interpretation of the config file.
   # Do not change this unless you want to rewrite most of your config files.
   home.stateVersion = "24.11";
