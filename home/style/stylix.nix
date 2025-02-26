@@ -7,7 +7,7 @@
 # =            ##    ##    ##       ##    ##        ##   ##   ##             = #
 # =             ######     ##       ##    ######## #### ##     ##            = #
 # ============================================================================ #
-{ inputs, config, pkgs, lib, stylix, ... }:
+{ inputs, config, options, pkgs, lib, stylix, ... }:
 {
   options = {
     wallpaper = lib.mkOption {
@@ -32,7 +32,7 @@
         serif = config.stylix.fonts.monospace;
         sansSerif = config.stylix.fonts.monospace;
         monospace = {
-          packages = pkgs.jetbrains-mono;
+          package = pkgs.jetbrains-mono;
           name = "JetBrains Mono";
         };
         emoji = {
@@ -41,15 +41,15 @@
         };
       };
 
-      base16Scheme = "${config.theme}";
-      polarity = "dark";
+      base16Scheme = config.theme;
+      # polarity = "dark";
 
-      image = "${config.wallpaper}";
+      image = config.wallpaper;
       imageScalingMode = "fill";
 
       targets.vscode.enable = false;
       enable = true;
-      autoEnable = false;
+      autoEnable = true;
 
     };
   };

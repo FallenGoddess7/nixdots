@@ -39,10 +39,18 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.extraSpecialArgs = { 
+              inherit inputs;
+              inherit systemSettings;
+              inherit userSettings;
+            };
             home-manager.users.alice = import ./home;
           }
         ];
+        specialArgs = {
+          inherit systemSettings;
+          inherit userSettings;
+        };
       };
     };
     
