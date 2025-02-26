@@ -35,6 +35,7 @@
         modules = [
           ./hosts/okabe/configuration.nix
           home-manager.nixosModules.home-manager
+          stylix.nixosModules.stylix
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
