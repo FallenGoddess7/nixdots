@@ -28,9 +28,6 @@
   
   config = {
     stylix = {
-      enable = true;
-      autoEnable = true;
-
       fonts = {
         serif = config.stylix.fonts.monospace;
         sansSerif = config.stylix.fonts.monospace;
@@ -51,6 +48,9 @@
       imageScalingMode = "fill";
 
       targets.vscode.enable = false;
+      enable = true;
+      autoEnable = false;
+
     };
   };
 }
