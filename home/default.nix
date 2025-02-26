@@ -1,9 +1,7 @@
 { inputs, pkgs, lib, ... }:
 {
   imports = [
-    ./theme/theme.nix
+    ./style/default.nix
   ];
 
-  wallpaper = lib.mkDefault ./wallpapers/reimu.png;
-  theme = lib.mkDefault ./themes/everforest-dark-hard.yaml
 }
