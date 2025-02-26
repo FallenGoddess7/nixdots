@@ -10,7 +10,7 @@
 {
   description = "My (Alice) configuration of NixOS via Flakes";
 
-  outputs = inputs@{ self, ... }: 
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }: 
   let
     # ================================ System ================================ #
     systemSettings = {
@@ -27,21 +27,35 @@
       theme = "everforest";
     };
 
-    # ================================= Libs ================================= #
-    myLibs = import ./libs/default.nix {inherit inputs;};
-  in with myLibs; {
+  in {
     # ========================= NixOS Configurations ========================= #
     nixosConfigurations = {
-      okabe = mkSystem ./hosts/okabe/configuration.nix; # Desktop #
-      # TODO: implement an iso for installaion of nixos.
-      # liveiso = mkSystem ./hosts/liveiso/configuration.nix;
-      # TODO: implement an iso for the configuration of Yubikey's and GPG keys.
-      # yubicoiso = mkSystem ./hosts/yubicoiso/configuration.nix;
+      okabe = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/okabe/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.alice = import ./home;
+          }
+        ];
+      };
     };
-    # ====================== Home-manager Configurations ===================== #
-    homeConfigurations = {
-      # TODO: add home-manager configurations.
-    };
+    
+    # nixosConfigurations = {
+    #   okabe = mkSystem ./hosts/okabe/configuration.nix; # Desktop #
+    #   # TODO: implement an iso for installaion of nixos.
+    #   # liveiso = mkSystem ./hosts/liveiso/configuration.nix;
+    #   # TODO: implement an iso for the configuration of Yubikey's and GPG keys.
+    #   # yubicoiso = mkSystem ./hosts/yubicoiso/configuration.nix;
+    # };
+    # # ====================== Home-manager Configurations ===================== #
+    # homeConfigurations = {
+    #   # TODO: add home-manager configurations.
+    # };
   };
 
   inputs = {
