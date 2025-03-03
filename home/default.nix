@@ -11,12 +11,8 @@
     # ./wayland/default.nix
   ];
 
+
   programs.vscode.enable = true;
-  programs.vscode.profiles = [
-    "default"
-  ];
-
-
 
 
 

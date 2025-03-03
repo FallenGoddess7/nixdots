@@ -15,6 +15,7 @@
     # ================================ System ================================ #
     systemSettings = {
       system = "x86_64";
+      hostname = "okabe";
       timezone = "America/Chicago";
       locale = "en_US.UTF-8";
     };
@@ -27,33 +28,78 @@
       theme = "everforest";
     };
 
+    homeManagerConfiguration = home-manager.lib.homeManagerConfiguration;
+
   in {
     # ========================= NixOS Configurations ========================= #
     nixosConfigurations = {
       okabe = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        system = systemSettings.system;
         modules = [
           ./hosts/okabe/configuration.nix
           home-manager.nixosModules.home-manager
-          stylix.nixosModules.stylix
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { 
-              inherit inputs;
-              inherit systemSettings;
-              inherit userSettings;
-            };
-            home-manager.users.alice = import ./home;
           }
         ];
         specialArgs = {
+          inherit inputs;
           inherit systemSettings;
           inherit userSettings;
         };
       };
     };
-    
+
+    # ====================== Home-manager Configurations ===================== #
+    homeConfigurations.${userSettings.username} = homeManagerConfiguration {
+      inherit nixpkgs;
+      modules = [
+        ./home/default.nix
+        stylix.homeManagerModules.stylix
+      ];
+      extraSpecialArgs = {
+        inherit inputs;
+        inherit systemSettings;
+        inherit userSettings;
+      };
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     # nixosConfigurations = {
     #   okabe = mkSystem ./hosts/okabe/configuration.nix; # Desktop #
     #   # TODO: implement an iso for installaion of nixos.

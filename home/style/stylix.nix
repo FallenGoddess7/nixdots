@@ -28,6 +28,14 @@
   
   config = {
     stylix = {
+      enable = true;
+      autoEnable = true;
+
+      base16Scheme = config.theme;
+
+      image = config.wallpaper;
+      imageScalingMode = "fill";
+
       fonts = {
         serif = config.stylix.fonts.monospace;
         sansSerif = config.stylix.fonts.monospace;
@@ -40,17 +48,6 @@
           package = pkgs.noto-fonts-monochrome-emoji;
         };
       };
-
-      base16Scheme = ./themes/everforest-dark-hard.yaml;
-      # polarity = "dark";
-
-      image = ./wallpapers/reimu.png;
-      imageScalingMode = "fill";
-
-      targets.vscode.enable = false;
-      enable = true;
-      autoEnable = true;
-
     };
   };
 }
