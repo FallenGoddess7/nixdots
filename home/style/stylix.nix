@@ -41,10 +41,10 @@
         };
       };
 
-      base16Scheme = config.theme;
+      base16Scheme = ./themes/everforest-dark-hard.yaml;
       # polarity = "dark";
 
-      image = config.wallpaper;
+      image = ./wallpapers/reimu.png;
       imageScalingMode = "fill";
 
       targets.vscode.enable = false;

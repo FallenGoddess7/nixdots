@@ -80,7 +80,6 @@
     git
     kitty
     tree
-    vscode
     firefox
   ];
 
