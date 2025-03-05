@@ -1,4 +1,4 @@
-{ inputs, pkgs, lib, userSettings, ... }:
+{ inputs, pkgs, lib, userSettings, stylix, ... }:
 {
 
   home.username = userSettings.username;
@@ -9,12 +9,17 @@
     ./shell/default.nix
     ./style/default.nix
     # ./wayland/default.nix
+    inputs.stylix.homeManagerModules.stylix
   ];
 
 
-  programs.vscode.enable = true;
-
-
+  programs.vscode = {
+    enable = true;
+    profiles.default = with pkgs; {
+      vscode-extensions.jnoortheen.nix-ide
+      vscode-extensions.mkhl.direnv
+    };
+  };
 
 
   # What version to lock interpretation of the config file.

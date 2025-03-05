@@ -31,6 +31,15 @@
     homeManagerConfiguration = home-manager.lib.homeManagerConfiguration;
 
   in {
+
+
+
+
+
+
+
+
+
     # ========================= NixOS Configurations ========================= #
     nixosConfigurations = {
       okabe = nixpkgs.lib.nixosSystem {
@@ -41,6 +50,13 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+	          home-manager.users.${userSettings.username} = import ./home/default.nix;
+	          home-manager.extraSpecialArgs = {
+	            inherit inputs;
+              inherit systemSettings;
+              inherit userSettings;
+	          };
           }
         ];
         specialArgs = {
@@ -52,7 +68,7 @@
     };
 
     # ====================== Home-manager Configurations ===================== #
-    homeConfigurations.${userSettings.username} = homeManagerConfiguration {
+    homeConfigurations."${userSettings.username}" = homeManagerConfiguration {
       inherit nixpkgs;
       modules = [
         ./home/default.nix
@@ -64,22 +80,6 @@
         inherit userSettings;
       };
     };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -117,11 +117,11 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     
     home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    # home-manager.inputs.nixpkgs.follows = "nixpkgs";
     
     stylix.url = "github:danth/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
     
-    # TODO: Add disko, impermanance, sops-nix, and NVF(or NixVim)
+    # TODO: Add disko, impermanance, sops-nix, and NVF(or NixVim), direnv
   };
 }

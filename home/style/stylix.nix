@@ -37,6 +37,12 @@
       imageScalingMode = "fill";
 
       fonts = {
+        sizes = {
+          applications = 10;
+          desktop = 10;
+          popups = 10;
+          terminal = 10;
+        };
         serif = config.stylix.fonts.monospace;
         sansSerif = config.stylix.fonts.monospace;
         monospace = {
