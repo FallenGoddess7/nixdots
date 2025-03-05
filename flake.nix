@@ -46,17 +46,6 @@
         modules = [
           ./hosts/okabe/configuration.nix
           home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-	          home-manager.users.${userSettings.username} = import ./home/default.nix;
-	          home-manager.extraSpecialArgs = {
-	            inherit inputs;
-              inherit systemSettings;
-              inherit userSettings;
-	          };
-          }
         ];
         specialArgs = {
           inherit inputs;
