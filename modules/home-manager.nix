@@ -4,7 +4,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "backup";
-    users.${userSettings.username} = import ./home/default.nix;
+    users.${userSettings.username} = import ../home/default.nix;
     extraSpecialArgs = {
       inherit inputs;
       inherit systemSettings;
