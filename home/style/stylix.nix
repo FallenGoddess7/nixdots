@@ -38,10 +38,10 @@
 
       fonts = {
         sizes = {
-          applications = 10;
+          applications = 11;
           desktop = 10;
           popups = 10;
-          terminal = 10;
+          terminal = 11;
         };
         serif = config.stylix.fonts.monospace;
         sansSerif = config.stylix.fonts.monospace;

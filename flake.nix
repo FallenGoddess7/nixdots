@@ -29,7 +29,6 @@
     };
 
     homeManagerConfiguration = home-manager.lib.homeManagerConfiguration;
-
   in {
 
 
@@ -68,18 +67,18 @@
     };
 
     # ====================== Home-manager Configurations ===================== #
-    homeConfigurations."${userSettings.username}" = homeManagerConfiguration {
-      inherit nixpkgs;
-      modules = [
-        ./home/default.nix
-        stylix.homeManagerModules.stylix
-      ];
-      extraSpecialArgs = {
-        inherit inputs;
-        inherit systemSettings;
-        inherit userSettings;
-      };
-    };
+#    homeConfigurations."${userSettings.username}" = homeManagerConfiguration {
+#      inherit nixpkgs;
+#      modules = [
+#        ./home/default.nix
+#        stylix.homeManagerModules.stylix
+#      ];
+#      extraSpecialArgs = {
+#        inherit inputs;
+#        inherit systemSettings;
+#        inherit userSettings;
+#      };
+#    };
 
 
 
