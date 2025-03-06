@@ -5,7 +5,7 @@
   home.homeDirectory = "/home/"+userSettings.username;
 
   imports = [
-    # ./apps/default.nix
+    ./apps/default.nix
     ./shell/default.nix
     ./style/default.nix
     ./wayland/default.nix
