@@ -30,7 +30,6 @@
     stylix = {
       enable = true;
       autoEnable = true;
-      targets.waybar.enable = false;
 
       base16Scheme = config.theme;
 
