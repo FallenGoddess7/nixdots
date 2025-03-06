@@ -1,6 +1,5 @@
 { ... }:
 {
-  programs.kitty.enable = true;
   programs.kitty = {
 		enable = true;
     shellIntegration.enableZshIntegration = true;
