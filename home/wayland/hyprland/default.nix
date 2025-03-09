@@ -13,7 +13,7 @@
       ];
 
       monitor = [
-        "monitor" = "HDMI-A-1, 1920x1080@60, 0x0, 1";  
+        "HDMI-A-1, 1920x1080@60, 0x0, 1"
       ];
 
       general = {
@@ -31,7 +31,7 @@
         inactive_opacity = 0.9;
         fullscreen_opacity = 1.0;
         dim_inactive = true;
-        dim_strength = 0.2;
+        dim_strength = 0.35;
         blur = {
           enabled = true;
           size = 6;
