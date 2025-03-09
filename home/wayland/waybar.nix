@@ -11,13 +11,15 @@
         "layer" = "top";
         "position" = "top";
         modules-left = [
+          "custom/fuzzel"
           "hyprland/workspaces"
         ];
         modules-center = [
-
+          "clock"
         ];
         modules-right = [
-
+          "tray"
+          "custom/powermenu"
         ];
       }
     ];
