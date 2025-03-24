@@ -7,5 +7,9 @@
     # ./users.nix
   ];
 
+
+  fonts.packages = with pkgs; [ 
+    font-awesome
+  ];
   # myBoot.enable = lib.mkDefault true;
 }

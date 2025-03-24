@@ -3,6 +3,6 @@
   imports = [
     ./hyprland/default.nix
     ./fuzzel.nix
-    ./waybar.nix
+    ./waybar/default.nix
   ];
 }
