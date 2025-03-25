@@ -1,0 +1,85 @@
+* {
+    border: none;
+    border-radius: 6pt;
+    font-size: 11pt;
+    margin: 0pt;
+    padding: 1.25pt;
+}
+*:hover {
+    background-color: #272E33;
+}
+window#waybar {
+    color: #D3C6AA;
+    background-color: #1E2326;
+    border-radius: 0pt;
+}
+tooltip {
+    color: #D3C6AA;
+    background-color: #272E33;
+}
+
+#custom-launcher {
+    color: #D699B6;
+    padding-top: 4pt;
+    padding-bottom: 4pt;
+    padding-right: 6pt;
+    padding-left: 6pt;
+}
+#custom-launcher:hover {
+    background-color: #272E33;
+    border-radius: 6pt;
+}
+
+#workspaces:hover {
+    background-color: #1E2326;
+}
+#workspaces button {
+    color: #495156;
+    background-color: #1E2326;
+    padding-top: 4pt;
+    padding-bottom: 4pt;
+    padding-right: 5pt;
+    padding-left: 5pt;
+    border-radius: 6pt;
+}
+#workspaces button.empty {
+    color: #272E33;
+}
+#workspaces button.active {
+    color: #A7C080;
+}
+#workspaces button.urgent {
+    color: #E67E80;
+}
+#workspaces button:hover {
+    color: #D3C6AA;
+    background-color: #272E33;
+}
+
+#network {
+    color: #7FBBB3;
+    padding: 3pt;
+}
+
+#pulseaudio {
+    color: #A7C080;
+    padding: 3pt;
+}
+
+#clock {
+    color: #D3C6AA;
+    padding: 3pt;
+}
+
+#custom-powermenu {
+    color: #E67E80;
+    padding: 5pt;
+    border-radius: 6pt;
+}
+#custom-powermenu:hover {
+    background-color: #272E33;
+}
+
+#tray {
+    font-size: 10pt;
+}

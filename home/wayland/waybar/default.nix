@@ -11,6 +11,7 @@
     {
       "layer" = "top";
       "position" = "top";
+      "height" = 0;
       
       modules-left = [
         "custom/launcher"
